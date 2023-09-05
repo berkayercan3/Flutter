@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+class ColorLearn extends StatelessWidget {
+  const ColorLearn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body:Container(
+        color: ColorsItems.charisma, child: const Text('data'),
+      ),
+
+    );
+  }
+}
+
+class ColorsItems {
+  static Color perrywinkle = const  Color(0xff9586df);
+
+  static Color charisma = const  Color.fromRGBO(96, 42, 91,1);
+}

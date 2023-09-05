@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kafe/101/app_bar_learn.dart';
 import 'package:kafe/101/button_learn.dart';
+import 'package:kafe/101/color_learn.dart';
 import 'package:kafe/101/cotainer_sized_box_learn.dart';
 import 'package:kafe/101/icon_learn.dart';
 import 'package:kafe/101/scaffoold_learn.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           elevation: 10, // gölge? görünürlüğü? her yerde 5
         )
       ),
-      home:IconLearnView(), // çağırma işlemi yaptık
+      home:const ColorLearn(), // çağırma işlemi yaptık
     );
   }
 }
