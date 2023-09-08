@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 
 class StaltessLearn extends StatelessWidget {
   //extends ile classimizin StatelessWidget ozelligini kullanabilmesini sagladik
+  final String text2 = "veli0";
+  final String text3 = "veli1";
+  final String text4 = "veli2";
+  final String text5 = "veli3";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
         children: [
-          TitleTextWidget(text: "veli0"),
+          TitleTextWidget(text: text2),
           _emptyBox(),
-          TitleTextWidget(text: "veli1"),
-          TitleTextWidget(text: "veli2"),
+          TitleTextWidget(text: text3),
+          TitleTextWidget(text: text4),
           _emptyBox(),
-          TitleTextWidget(text: "veli3"),
-          _CustomContainer(),//Refactor yaptik
+          TitleTextWidget(text: text5),
+         const _CustomContainer(),//Refactor yaptik
           _emptyBox()
         ],
       ),
