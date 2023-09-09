@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kafe/101/app_bar_learn.dart';
 import 'package:kafe/101/button_learn.dart';
+import 'package:kafe/101/card_learn.dart';
 import 'package:kafe/101/color_learn.dart';
 import 'package:kafe/101/cotainer_sized_box_learn.dart';
 import 'package:kafe/101/icon_learn.dart';
@@ -24,16 +25,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith( // projede kullanılacak appbar stilimizin aynı olacağı şeylerin aynı olacağı işlemleri buraya yazdık
-                                        //artık bu yazdıklarımız tüm sayfalarda klasik oldu
-        appBarTheme: const AppBarTheme(
-          centerTitle: true, //appardaki yazı ortalandı her yerde
-          systemOverlayStyle: SystemUiOverlayStyle.light, // appbar üstü light kaldı
-          backgroundColor: Colors.transparent, // arka plan her yerde transparant
-          elevation: 10, // gölge? görünürlüğü? her yerde 5
-        )
-      ),
-      home: PaddingLearn(), // çağırma işlemi yaptık
+      theme: ThemeData.dark().copyWith(
+
+        cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+        // Bu sayede projemizdeki bütün kartlarımızın tasarımı aynı olur tek tek uğraşmayız eğer hepsi aynı ise
+
+          // projede kullanılacak appbar stilimizin aynı olacağı şeylerin aynı olacağı işlemleri buraya yazdık
+          //artık bu yazdıklarımız tüm sayfalarda klasik oldu
+          appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        //appardaki yazı ortalandı her yerde
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+        // appbar üstü light kaldı
+        backgroundColor: Colors.transparent,
+        // arka plan her yerde transparant
+        elevation: 10, // gölge? görünürlüğü? her yerde 5
+      )),
+      home: CardLearn(), // çağırma işlemi yaptık
     );
   }
 }
