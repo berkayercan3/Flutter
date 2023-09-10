@@ -7,6 +7,7 @@ import 'package:kafe/101/card_learn.dart';
 import 'package:kafe/101/color_learn.dart';
 import 'package:kafe/101/cotainer_sized_box_learn.dart';
 import 'package:kafe/101/icon_learn.dart';
+import 'package:kafe/101/image_learn.dart';
 import 'package:kafe/101/padding_learn.dart';
 import 'package:kafe/101/scaffoold_learn.dart';
 import 'package:kafe/101/stateless_learn.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         // arka plan her yerde transparant
         elevation: 10, // gölge? görünürlüğü? her yerde 5
       )),
-      home: CardLearn(), // çağırma işlemi yaptık
+      home: ImageLearn(), // çağırma işlemi yaptık
     );
   }
 }
