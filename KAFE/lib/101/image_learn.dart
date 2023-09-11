@@ -12,9 +12,8 @@ final String _imagePath = 'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c6
           SizedBox(
             height: 400,
             width: 300,
-            child:  Image.asset(ImageItems().picture,
-             fit: BoxFit.cover, // görüntüyü istediğimiz gibi boyutlandırabiliyoruz
-            ),
+            child: pictureImage(path:ImageItems().pictureWithoutPath),
+
           ),
           Image.network('https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c683df40833b87469.jpg')
           //resim linkini kullanarak resim kullanma şekli
@@ -25,14 +24,17 @@ final String _imagePath = 'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c6
 }
 
 class ImageItems {
-final String picture = "assets/resim/resim.jpeg";
+final String pictureWithoutPath = "resim";
 }
 
-class pictureImage extends StatelessWidget {
-  const pictureImage({super.key});
 
+class pictureImage extends StatelessWidget {
+  const pictureImage({super.key, required this.path});
+final String path;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Image.asset(_nameWithPath(), fit: BoxFit.cover);
   }
+
+  String _nameWithPath() => 'assets/resim/$path.jpeg';
 }
