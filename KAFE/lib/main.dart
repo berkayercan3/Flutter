@@ -6,6 +6,7 @@ import 'package:kafe/101/button_learn.dart';
 import 'package:kafe/101/card_learn.dart';
 import 'package:kafe/101/color_learn.dart';
 import 'package:kafe/101/cotainer_sized_box_learn.dart';
+import 'package:kafe/101/custom_widget_learn.dart';
 import 'package:kafe/101/icon_learn.dart';
 import 'package:kafe/101/image_learn.dart';
 import 'package:kafe/101/padding_learn.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         // arka plan her yerde transparant
         elevation: 10, // gölge? görünürlüğü? her yerde 5
       )),
-      home: Demo1(), // çağırma işlemi yaptık
+      home: CustomWidgetLearn(), // çağırma işlemi yaptık
     );
   }
 }
