@@ -18,6 +18,7 @@ import 'package:kafe/101/stack_learn.dart';
 import 'package:kafe/101/stateless_learn.dart';
 import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
+import 'package:kafe/Demos/Demo2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
         // arka plan her yerde transparant
         elevation: 10, // gölge? görünürlüğü? her yerde 5
       )),
-      home: const StackLearn(), // çağırma işlemi yaptık
+      home: const StackDemoTwo(), // çağırma işlemi yaptık
     );
   }
 }
