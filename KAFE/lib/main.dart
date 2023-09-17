@@ -18,6 +18,7 @@ import 'package:kafe/101/stack_learn.dart';
 import 'package:kafe/101/stateful_learn.dart';
 import 'package:kafe/101/statefull_life_cycle_learn.dart';
 import 'package:kafe/101/stateless_learn.dart';
+import 'package:kafe/101/text_field_learn.dart';
 import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
 import 'package:kafe/Demos/Demo2.dart';
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         // arka plan her yerde transparant
         elevation: 10, // gölge? görünürlüğü? her yerde 5
       )),
-      home: const StatefullLifeCycleLearn(message: "Berkay"), // çağırma işlemi yaptık
+      home: const TextFieldLearn(), // çağırma işlemi yaptık
     );
   }
 }
