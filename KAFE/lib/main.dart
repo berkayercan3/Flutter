@@ -37,21 +37,33 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white), //projede genel kullanilacak olan indicatoru belirledik
-        cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-        // Bu sayede projemizdeki bütün kartlarımızın tasarımı aynı olur tek tek uğraşmayız eğer hepsi aynı ise
+          progressIndicatorTheme:
+              const ProgressIndicatorThemeData(color: Colors.white),
+          //projede genel kullanilacak olan indicatoru belirledik
+          cardTheme: CardTheme(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
+          // Bu sayede projemizdeki bütün kartlarımızın tasarımı aynı olur tek tek uğraşmayız eğer hepsi aynı ise
+
+          inputDecorationTheme: const InputDecorationTheme( //genel
+              filled: true, // metin alanının arka planı dolduruldu
+              fillColor: Colors.black38,
+              iconColor: Colors.red, //genel iconların rengi kırmızı oldu
+              border: OutlineInputBorder(), // her metin alanının etrafı sarıldı
+              floatingLabelStyle: TextStyle(color: Colors.red,fontSize:24,fontWeight: FontWeight.w600),
+          ),
 
           // projede kullanılacak appbar stilimizin aynı olacağı şeylerin aynı olacağı işlemleri buraya yazdık
           //artık bu yazdıklarımız tüm sayfalarda klasik oldu
           appBarTheme: const AppBarTheme(
-        centerTitle: true,
-        //appardaki yazı ortalandı her yerde
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        // appbar üstü light kaldı
-        backgroundColor: Colors.transparent,
-        // arka plan her yerde transparant
-        elevation: 10, // gölge? görünürlüğü? her yerde 5
-      )),
+            centerTitle: true,
+            //appardaki yazı ortalandı her yerde
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            // appbar üstü light kaldı
+            backgroundColor: Colors.transparent,
+            // arka plan her yerde transparant
+            elevation: 10, // gölge? görünürlüğü? her yerde 5
+          )),
       home: const TextFieldLearn(), // çağırma işlemi yaptık
     );
   }
