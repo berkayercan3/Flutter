@@ -4,15 +4,32 @@
 import 'package:flutter/material.dart';
 
 class ColorDemos extends StatefulWidget {
-  const ColorDemos({super.key});
-
+  const ColorDemos({super.key, required this.initialColor});
+    final Color? initialColor;
   @override
   State<ColorDemos> createState() => _ColorDemosState();
 }
 
 class _ColorDemosState extends State<ColorDemos> {
-  Color? _backgroundColor = Colors.transparent;
-  void changeBackgroundColor(Color color) {
+  Color? _backgroundColor;
+
+  @override
+  void initState() { // uygulama baslar baslamaz yapilacak is pembe vermek
+    super.initState();
+    _backgroundColor = widget.initialColor ?? Colors.transparent;
+  }
+
+  @override
+  void didUpdateWidget(covariant ColorDemos oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if(widget.initialColor != _backgroundColor && widget.initialColor != null)
+    //eger baslangic color um arkaplan rengine ve baslangic colorum nulla a esit degilse arka plan rengini baslangic rengi yap
+      // ben tuslara basarak rengi degistiriyorum ve icon sayesinde bu rengi sorgulayip eski haline geri donderebiliyorum
+      {changeBackgroundColor(widget.initialColor!);}
+  }
+
+ void changeBackgroundColor(Color color) {
     setState(() { //kullanici arayuzu degistirmeye yarayan yontemdir
       _backgroundColor = color;
     });

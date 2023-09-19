@@ -23,6 +23,7 @@ import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
 import 'package:kafe/Demos/Demo2.dart';
 import 'package:kafe/Demos/Demo3.dart';
+import 'package:kafe/Demos/color_life_cycle_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
             // arka plan her yerde transparant
             elevation: 10, // gölge? görünürlüğü? her yerde 5
           )),
-      home: const ColorDemos(), // çağırma işlemi yaptık
+      home: const ColorLifeCycleView(), // çağırma işlemi yaptık
     );
   }
 }
