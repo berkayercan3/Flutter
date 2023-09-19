@@ -22,6 +22,7 @@ import 'package:kafe/101/text_field_learn.dart';
 import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
 import 'package:kafe/Demos/Demo2.dart';
+import 'package:kafe/Demos/Demo3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
             // arka plan her yerde transparant
             elevation: 10, // gölge? görünürlüğü? her yerde 5
           )),
-      home: const TextFieldLearn(), // çağırma işlemi yaptık
+      home: const ColorDemos(), // çağırma işlemi yaptık
     );
   }
 }
