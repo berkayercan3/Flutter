@@ -12,6 +12,7 @@ import 'package:kafe/101/icon_learn.dart';
 import 'package:kafe/101/image_learn.dart';
 import 'package:kafe/101/indicator_learn.dart';
 import 'package:kafe/101/list_tile_learn.dart';
+import 'package:kafe/101/list_view_learn.dart';
 import 'package:kafe/101/padding_learn.dart';
 import 'package:kafe/101/scaffoold_learn.dart';
 import 'package:kafe/101/stack_learn.dart';
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
             // arka plan her yerde transparant
             elevation: 10, // gölge? görünürlüğü? her yerde 5
           )),
-      home: const ColorLifeCycleView(), // çağırma işlemi yaptık
+      home: const ListViewLearnState(), // çağırma işlemi yaptık
     );
   }
 }
