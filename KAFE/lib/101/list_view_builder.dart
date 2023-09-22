@@ -18,6 +18,7 @@ class _ListviewBuilderLearnState extends State<ListviewBuilderLearn> {
         //burada her bir ögeyi sırası ile oluşturmak için bir builder kullanıldı
         //print(index); // oluşturulan ögenin sırasını takip ettik debugda
       body: ListView.separated(separatorBuilder:(context , index) {
+        print(index);
           return const Divider(
             color: Colors.white,
           );
