@@ -8,26 +8,25 @@ class ListViewLearnState extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        
-        child: ListView(
+        child: ListView( // bir dizi ögeyi yatay ve diky olarak yerleştirir
           children: [
-            FittedBox(
+            FittedBox( // bir childin boytunu ayarlamak için kullanılır
               child: Text(
                 'Hello',
                 style: Theme.of(context).textTheme.headline2,
                 maxLines: 1,
               ),
             ),
-            Container(color: Colors.red,height: 200),
-            const Divider(),
+            Container(color: Colors.red,height: 200,),
+            const Divider(), // boşluk yaratır
             Container(color: Colors.green,height: 200),
             const Divider(),
             SizedBox(
               height: 100,
               child: ListView(
-                scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.horizontal, //kaydırma yönünü yatay olarak belirledik
                   children: [
-                Container(color: Colors.green,width: 200),
+                Container(color: Colors.green,width: 500),
                     Container(color: Colors.white,width: 200),
 
                   ]),
@@ -40,6 +39,9 @@ class ListViewLearnState extends StatelessWidget {
     );
   }
 }
+
+
+//bundan sonraki kısım debug yapmak için kullandık
 
 class _ListDemoState extends StatefulWidget {
   const _ListDemoState({super.key});
