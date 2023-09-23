@@ -22,10 +22,10 @@ class TextLearnView extends StatelessWidget {
           //Scaffold'ın "body" özelliği, sayfanın ana içeriğini belirtir. Burada "Center" adında bir widget kullanılarak, içeriğin ortalanmasını sağlıyoruz.
 
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CupertinoButton(child: const Text('button'), onPressed: () {}),
-          Text(
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+            CupertinoButton(child: const Text('button'), onPressed: () {}),
+             Text(
             //Center" widget'ının içeriği olarak "Text" adında bir widget kullanıyoruz. Bu, belirli bir metni görüntülememizi sağlar.
             'Berkay $name ${name.length}',
             // Bu, görüntülenmek istenen metni belirtir. Metinde "Berkay", ardından name özelliği ve name.length ifadesi yer alır.

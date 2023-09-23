@@ -26,6 +26,7 @@ import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
 import 'package:kafe/Demos/Demo2.dart';
 import 'package:kafe/Demos/Demo3.dart';
+import 'package:kafe/Demos/My_attempt_demo.dart';
 import 'package:kafe/Demos/color_life_cycle_view.dart';
 import 'package:kafe/Demos/my_collections_demos.dart';
 
@@ -58,7 +59,6 @@ class MyApp extends StatelessWidget {
               border: OutlineInputBorder(), // her metin alanının etrafı sarıldı
               floatingLabelStyle: TextStyle(color: Colors.red,fontSize:24,fontWeight: FontWeight.w600),
           ),
-
           // projede kullanılacak appbar stilimizin aynı olacağı şeylerin aynı olacağı işlemleri buraya yazdık
           //artık bu yazdıklarımız tüm sayfalarda klasik oldu
           appBarTheme: const AppBarTheme(
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
             // arka plan her yerde transparant
             elevation: 10, // gölge? görünürlüğü? her yerde 5
           )),
-      home: const NavigationLearn(), // çağırma işlemi yaptık
+      home:const MyAttemptDemo(), // çağırma işlemi yaptık
     );
   }
 }
