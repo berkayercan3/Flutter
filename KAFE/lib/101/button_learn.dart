@@ -52,8 +52,8 @@ class ButtonLearn extends StatelessWidget {
               minimumSize: Size(300, 100),
             ),
             onPressed: () {},
-            child: Padding(
-                padding: const EdgeInsets.only(
+            child: const Padding(
+                padding: EdgeInsets.only(
                     top: 20, bottom: 20, right: 40, left: 40),
                 child: Text(
                   'Success',

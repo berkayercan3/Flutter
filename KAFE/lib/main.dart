@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
           progressIndicatorTheme:
               const ProgressIndicatorThemeData(color: Colors.white),
           //projede genel kullanilacak olan indicatoru belirledik
