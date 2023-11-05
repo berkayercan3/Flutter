@@ -20,7 +20,6 @@ class ContainerSizeBoxLearn extends StatelessWidget {
           const SizedBox.shrink(), // shrink boş alan oluşturur
           SizedBox.square( // 50 lik kare alan olsun
             dimension: 15, // dimension boyut anlamındadır
-
             child: Text('bbb' * 5),
           ),
           Container(

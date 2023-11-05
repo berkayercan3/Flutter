@@ -12,7 +12,6 @@ class ColorLearn extends StatelessWidget {
 
         color: ColorsItems.charisma, child: const Text('data'),
       ),
-
     );
   }
 }

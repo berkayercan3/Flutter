@@ -19,7 +19,7 @@ class CardLearn extends StatelessWidget {
             color: Theme.of(context).colorScheme.error,
             child: const SizedBox(height: 100, width: 200),
           ),
-          _CustomCard(child: SizedBox(height: 100, width: 200, child: Center(child: Text('Berkay')),
+          _CustomCard(child:const  SizedBox(height: 100, width: 200, child: Center(child: Text('Berkay')),
           )),
         ],
       ),

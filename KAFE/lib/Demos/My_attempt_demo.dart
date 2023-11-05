@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAttemptDemo extends StatelessWidget {
-  const MyAttemptDemo({super.key});
+  const MyAttemptDemo({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class MyAttemptDemo extends StatelessWidget {
             width: 500,
             height: 300,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: ProjectPadding.imagePad,
               child: PictureImageone(path: ImageItems().pictureWithoutPath),
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 50, right: 150, left: 20),
+            padding: ProjectPadding.subjectPad,
             child: SizedBox(
               child: Text(
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
@@ -37,7 +37,7 @@ class MyAttemptDemo extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 15, right: 20, left: 20),
+            padding: ProjectPadding.textPad,
             child: SizedBox(
               child: Text(
                 style: TextStyle(
@@ -49,13 +49,12 @@ class MyAttemptDemo extends StatelessWidget {
               ),
             ),
           ),
-
           Container(
             height: 100,
             width: 400,
             alignment: Alignment.bottomRight,
             child: Padding(
-              padding: const EdgeInsets.only(right: 30,bottom: 13),
+              padding: ProjectPadding.buttonPad,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -65,7 +64,6 @@ class MyAttemptDemo extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                 ),
-
                 child: const Text(
                   'Get Started',
                   style: TextStyle(
@@ -75,18 +73,14 @@ class MyAttemptDemo extends StatelessWidget {
               ),
             ),
           ),
-
           Container(
             alignment: Alignment.bottomRight,
             child: const Padding(
-              padding: EdgeInsets.only(top: 17, right: 5, left: 20),
+              padding: ProjectPadding.withByPad,
               child: SizedBox(
                 child: Text(
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      fontSize: 11),
                   'With By: Berkay Ercan',
+                  style:  TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontSize: 11),
                 ),
               ),
             ),
@@ -112,4 +106,13 @@ class PictureImageone extends StatelessWidget {
   }
 
   String _nameWithPath() => 'assets/resim/$path.png';
+}
+
+class ProjectPadding {
+  static const withByPad = EdgeInsets.only(top: 17, right: 5, left: 20);
+  static const buttonPad = EdgeInsets.only(right: 30,bottom: 13);
+  static const textPad = EdgeInsets.only(top: 15, right: 20, left: 20);
+  static const subjectPad = EdgeInsets.only(top: 50, right: 150, left: 20);
+  static const imagePad = EdgeInsets.symmetric(horizontal: 50);
+
 }

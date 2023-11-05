@@ -51,6 +51,7 @@ class ColumnRow extends StatelessWidget {
     );
   }
 }
+
 class ProjectContainerSizes {
   static const double cardHeight = 200;
 }

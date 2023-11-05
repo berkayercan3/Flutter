@@ -26,6 +26,7 @@ import 'package:kafe/101/text_learn_view.dart';
 import 'package:kafe/Demos/Demo1.dart';
 import 'package:kafe/Demos/Demo2.dart';
 import 'package:kafe/Demos/Demo3.dart';
+import 'package:kafe/Demos/My_Attempt_Demo_PageTwo.dart';
 import 'package:kafe/Demos/My_attempt_demo.dart';
 import 'package:kafe/Demos/color_life_cycle_view.dart';
 import 'package:kafe/Demos/my_collections_demos.dart';
@@ -69,8 +70,9 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             // arka plan her yerde transparant
             elevation: 10, // gölge? görünürlüğü? her yerde 5
-          )),
-      home:const MyAttemptDemo(), // çağırma işlemi yaptık
+          )
+      ),
+      home: const StackLearn(), // çağırma işlemi yaptık
     );
   }
 }

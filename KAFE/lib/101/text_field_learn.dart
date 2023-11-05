@@ -21,7 +21,7 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
       body: Column(
         children: [
           TextField(
-            // ekrana yazı yazabileceğin bir textfield geldi
+            // ekrana yazı yazabileceğin bir textfield alanı geldi
 
             maxLength: 20,
             // yazılabilecek maksimum değeri ifade eder ve ekranda bunu gösterir

@@ -13,7 +13,6 @@ final String _imagePath = 'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c6
             height: 400,
             width: 300,
             child: pictureImage(path:ImageItems().pictureWithoutPath),
-
           ),
           Image.network(_imagePath)
           //resim linkini kullanarak resim kullanma şekli

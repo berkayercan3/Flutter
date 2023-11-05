@@ -26,6 +26,7 @@ class TextLearnView extends StatelessWidget {
               children: [
             CupertinoButton(child: const Text('button'), onPressed: () {}),
              Text(
+
             //Center" widget'ının içeriği olarak "Text" adında bir widget kullanıyoruz. Bu, belirli bir metni görüntülememizi sağlar.
             'Berkay $name ${name.length}',
             // Bu, görüntülenmek istenen metni belirtir. Metinde "Berkay", ardından name özelliği ve name.length ifadesi yer alır.
@@ -40,7 +41,7 @@ class TextLearnView extends StatelessWidget {
                 fontSize: 35,
                 wordSpacing: 2,
                 //  Kelimeler arası boşluğu ayarlar.
-                decoration: TextDecoration.underline,
+                decoration:TextDecoration.underline,
                 //Metnin altını çizer.
                 fontStyle: FontStyle.italic,
                 letterSpacing: 2,
