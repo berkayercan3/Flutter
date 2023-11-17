@@ -8,21 +8,28 @@ class DemoOne extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            color: Colors.black,
+            icon: const Icon(Icons.message_outlined),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
+          actions: const [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Icon(
+                Icons.abc_sharp,
+                color: Colors.blue,
+              ),
+            )
+          ],
           title: const Padding(
-            padding: EdgeInsets.only(left: 70),
+            padding: EdgeInsets.all(10),
             child: Text(
-              "Welcome!",
-              // textAlign: TextAlign.center,
+              "Welcome to My Notes",
               style: TextStyle(color: Colors.black, fontSize: 28),
             ),
           )),
-      //body:
+      body: const Icon(Icons.abc_sharp),
     );
   }
 }

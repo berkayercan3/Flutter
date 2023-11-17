@@ -50,16 +50,6 @@ class _NavigationLearnState extends State<NavigationLearn>
           );
         },
       ),
-      floatingActionButton: SizedBox(
-        width: 100,
-        height: 100,
-        child: FloatingActionButton(
-          child: const Text('Button'),
-          onPressed: () async {
-
-          },
-        ),
-      ),
     );
   }
 }
@@ -74,7 +64,6 @@ mixin NavigatorManager {
       settings: const RouteSettings(),
     ));
   }
-
   Future<T?> navigateToWidgetNormal<T>(BuildContext context, Widget widget) {
     return Navigator.of(context).push<T>(MaterialPageRoute(
       builder: (context) {

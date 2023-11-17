@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_one.dart';
 
-class DemoOne extends StatelessWidget {
-  const DemoOne({super.key});
+class DemoStart extends StatelessWidget {
+  const DemoStart({super.key});
 
   final _appBarTextSkip = 'Skip';
   final _bodyText =
@@ -65,7 +66,12 @@ class DemoOne extends StatelessWidget {
               width: 200,
               height: 80,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DemoOne()),
+                  );
+                },
                 style: StyleItems().button2Style(),
                 child: Text(
                   _button2Text,
@@ -129,6 +135,6 @@ class StyleItems {
   }
 
   TextStyle button2TextStyle() {
-    return const TextStyle(fontSize: 20, color: Colors.black54);
+    return const TextStyle(fontSize: 20, color: Colors.black87);
   }
 }

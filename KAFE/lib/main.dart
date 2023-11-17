@@ -8,6 +8,7 @@ import 'package:kafe/101/color_learn.dart';
 import 'package:kafe/101/column_row_learn.dart';
 import 'package:kafe/101/cotainer_sized_box_learn.dart';
 import 'package:kafe/101/custom_widget_learn.dart';
+import 'package:kafe/101/demoone.dart';
 import 'package:kafe/101/icon_learn.dart';
 import 'package:kafe/101/image_learn.dart';
 import 'package:kafe/101/indicator_learn.dart';
@@ -72,7 +73,7 @@ class MyApp extends StatelessWidget {
             elevation: 10, // gölge? görünürlüğü? her yerde 5
           )
       ),
-      home: const StackLearn(), // çağırma işlemi yaptık
+      home:  DemoOne(), // çağırma işlemi yaptık
     );
   }
 }
