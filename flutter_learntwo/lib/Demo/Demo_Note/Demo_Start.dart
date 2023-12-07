@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_one.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_login.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_main.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_signup.dart';
 
-class DemoStart extends StatelessWidget {
-  const DemoStart({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
 
   final _appBarTextSkip = 'Skip';
   final _bodyText =
       'Welcome to Note Taking: Simplify Your Note-Taking Journey!';
-  final _button1Text = 'Get Started';
-  final _button2Text = 'Register';
+  final _button1Text = 'Login';
+  final _button2Text = 'Sign Up';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         actions: [
           Padding(
             padding: PaddingItems.appBarButtonPadding,
             child: TextButton(
               style: StyleItems().appBarStyle(),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MainPage()));
+              },
               child:
                   Text(_appBarTextSkip, style: StyleItems().appBarTextStyle()),
             ),
@@ -28,11 +34,15 @@ class DemoStart extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
-            width: 500,
-            child: Padding(
-              padding: PaddingItems.picturePadding,
-              child: Image.asset('assets/note.png'),
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: SizedBox(
+              height: 350,
+              width: 500,
+              child: Padding(
+                padding: PaddingItems.picturePadding,
+                child: Image.asset('assets/note.png'),
+              ),
             ),
           ),
           SizedBox(
@@ -51,7 +61,12 @@ class DemoStart extends StatelessWidget {
               width: 200,
               height: 80,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
                 style: StyleItems().button1Style(),
                 child: Text(
                   _button1Text,
@@ -69,7 +84,7 @@ class DemoStart extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const DemoOne()),
+                    MaterialPageRoute(builder: (context) => const DemoSignUp()),
                   );
                 },
                 style: StyleItems().button2Style(),
@@ -87,11 +102,12 @@ class DemoStart extends StatelessWidget {
 }
 
 class PaddingItems {
-  static EdgeInsets appBarButtonPadding = const EdgeInsets.only(right: 20);
-  static EdgeInsets picturePadding = const EdgeInsets.only(top: 30);
+  static EdgeInsets appBarButtonPadding =
+      const EdgeInsets.only(top: 23, right: 28);
+  static EdgeInsets picturePadding = const EdgeInsets.only(top: 20);
   static EdgeInsets bodyTextPadding = const EdgeInsets.only(top: 20);
   static EdgeInsets button1Padding = const EdgeInsets.only(top: 40);
-  static EdgeInsets button2Padding = const EdgeInsets.only(top: 5);
+  static EdgeInsets button2Padding = const EdgeInsets.only(top: 30);
 }
 
 class StyleItems {
@@ -107,7 +123,7 @@ class StyleItems {
 
   ButtonStyle button1Style() {
     return ElevatedButton.styleFrom(
-      primary: const Color.fromARGB(255, 255, 209, 3),
+      backgroundColor: const Color.fromARGB(255, 255, 209, 3),
       shape: const StadiumBorder(),
     );
   }

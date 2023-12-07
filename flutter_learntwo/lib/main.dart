@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_start.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/Demo_Start.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: const DemoStart(),
+      home: const StartPage(),
     );
   }
 }
