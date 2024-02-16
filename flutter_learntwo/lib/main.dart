@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        tabBarTheme: TabBarTheme(
+          indicatorColor: Colors.white,
+          labelColor: Colors.orange[900],
+          unselectedLabelColor: Colors.black,
+          indicatorSize: TabBarIndicatorSize.tab,
+        ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white24,
           systemOverlayStyle: SystemUiOverlayStyle.light,
