@@ -29,7 +29,7 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
-              child: const Text('tab2'),
+              child: const Text('tab1'),
               onPressed: () {
                 _tabController.animateTo(_MyTabViews.home.index);
               }),
