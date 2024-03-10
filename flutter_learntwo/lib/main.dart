@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_learntwo/202/mdoel_learn_view.dart';
-import 'package:flutter_learntwo/202/tab_learn.dart';
+import '202/Services/service_learn_view.dart';
+//import 'package:flutter_learntwo/202/mdoel_learn_view.dart';
 //import 'package:flutter_learntwo/Demo/Demo_Note/Demo_Start.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: const ModelLearnView(),
+      home: const ServiceLearn(),
     );
   }
 }

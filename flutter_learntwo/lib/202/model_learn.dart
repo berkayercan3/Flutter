@@ -2,7 +2,7 @@
 
 //MODEL ÇEŞİTLERİ
 
-class PostModel {
+class PostModel0 {
   // nullable
   int? userId;
   int? id;
