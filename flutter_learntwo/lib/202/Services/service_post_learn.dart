@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learntwo/202/Services/post_model.dart';
 
@@ -16,9 +17,9 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
   late final Dio _dio;
   final _baseURL = 'https://jsonplaceholder.typicode.com/';
 
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _bodyController = TextEditingController();
-  TextEditingController _userIdController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _bodyController = TextEditingController();
+  final TextEditingController _userIdController = TextEditingController();
   /*TextEditingController, Flutter'daki metin alanlarını (örneğin, TextField widget'ları)
   kontrol etmek için kullanılan bir denetleyici sınıftır. Bu denetleyiciler,
    metin alanlarında kullanıcının girdiği metni kontrol etmek, metin alanlarının 
@@ -47,7 +48,9 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
         name = 'Basarisiz';
       }
     } catch (error) {
-      print('Hata olustu: $error');
+      if (kDebugMode) {
+        print('Hata olustu: $error');
+      }
       name = 'Basarisiz';
     } finally {
       _changeLoading();
@@ -101,6 +104,7 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
   }
 }
 
+// ignore: unused_element
 class _PostModel extends StatelessWidget {
   const _PostModel({
     required this.items,

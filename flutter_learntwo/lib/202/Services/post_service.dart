@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -34,7 +36,7 @@ class PostService implements IPostService {
 
   @override
   Future<bool> putItemToService(PostModel postModel, int id) async {
-    // put vermek yüklemek
+    // put güncellemek
     try {
       final response = await _dio.put('${_PostsServicePaths.posts.name}/id',
           data: postModel);
@@ -63,11 +65,12 @@ class PostService implements IPostService {
       final response = await _dio.get(_PostsServicePaths.posts.name);
 
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
-        if (_datas is List) {
-          return _datas.map((e) => PostModel.fromJson(e)).toList();
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => PostModel.fromJson(e)).toList();
         }
       }
+      // ignore: deprecated_member_use
     } on DioError catch (exception) {
       _ShowDebug.showDioError(exception);
     }
@@ -82,11 +85,12 @@ class PostService implements IPostService {
           queryParameters: {_PostsQueryPaths.postsID.name: postID});
 
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
-        if (_datas is List) {
-          return _datas.map((e) => CommentModel.fromJson(e)).toList();
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => CommentModel.fromJson(e)).toList();
         }
       }
+      // ignore: deprecated_member_use
     } on DioError catch (exception) {
       _ShowDebug.showDioError(exception);
     }
@@ -99,6 +103,7 @@ enum _PostsServicePaths { posts, comments }
 enum _PostsQueryPaths { postsID }
 
 class _ShowDebug {
+  // ignore: deprecated_member_use
   static void showDioError(DioError error) {
     if (kDebugMode) {
       print(error.message);

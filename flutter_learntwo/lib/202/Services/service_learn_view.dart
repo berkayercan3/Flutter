@@ -1,4 +1,5 @@
-import 'dart:html';
+// ignore_for_file: unused_field
+
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -42,11 +43,11 @@ class _ServiceLearnState extends State<ServiceLearn> {
     final response = await Dio().get(_baseURL);
 
     if (response.statusCode == HttpStatus.ok) {
-      final _datas = response.data;
+      final datas = response.data;
 
-      if (_datas is List) {
+      if (datas is List) {
         setState(() {
-          _items = _datas.map((e) => PostModel.fromJson(e)).toList();
+          _items = datas.map((e) => PostModel.fromJson(e)).toList();
         });
       }
     }
@@ -107,6 +108,7 @@ class _PostCard extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _PostModel extends StatelessWidget {
   const _PostModel({
     required this.items,
