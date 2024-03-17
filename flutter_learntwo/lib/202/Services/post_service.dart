@@ -34,6 +34,7 @@ class PostService implements IPostService {
 
   @override
   Future<bool> putItemToService(PostModel postModel, int id) async {
+    // put vermek yüklemek
     try {
       final response = await _dio.put('${_PostsServicePaths.posts.name}/id',
           data: postModel);
@@ -45,6 +46,7 @@ class PostService implements IPostService {
 
   @override
   Future<bool> deleteItemToService(int id) async {
+    // data silmek
     try {
       final response = await _dio.put('${_PostsServicePaths.posts.name}/id');
       return response.statusCode == HttpStatus.ok;
@@ -55,6 +57,7 @@ class PostService implements IPostService {
 
   @override
   Future<List<PostModel>?> fetchPostItemsAdvance() async {
+    // data almak
     //_changeLoading(); servis kısmında bu şekilde metod kullanamayız
     try {
       final response = await _dio.get(_PostsServicePaths.posts.name);

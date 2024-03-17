@@ -19,7 +19,10 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _bodyController = TextEditingController();
   TextEditingController _userIdController = TextEditingController();
-
+  /*TextEditingController, Flutter'daki metin alanlarını (örneğin, TextField widget'ları)
+  kontrol etmek için kullanılan bir denetleyici sınıftır. Bu denetleyiciler,
+   metin alanlarında kullanıcının girdiği metni kontrol etmek, metin alanlarının 
+  değerini okumak ve metin alanlarındaki metni değiştirmek için kullanılır.*/
   @override
   initState() {
     super.initState();
