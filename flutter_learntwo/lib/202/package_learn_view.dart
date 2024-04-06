@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learntwo/202/package/launch_manager.dart';
 import 'package:flutter_learntwo/202/package/loading_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -10,24 +11,17 @@ class PackageLearnView extends StatefulWidget {
 }
 
 class _PackageLearnViewState extends State<PackageLearnView>
-    with TickerProviderStateMixin {
+    with TickerProviderStateMixin, LaunchMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _launchUrl('https://pub.dev/');
+          launchUrl(Uri.parse('https://pub.dev/'));
         },
       ),
       body: const LoadingBar(),
     );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      throw Exception('Could not launch $url');
-    }
   }
 }
