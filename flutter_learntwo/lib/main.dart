@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_learntwo/202/package_learn_view.dart';
+//import 'package:flutter/services.dart';
+//import 'package:flutter_learntwo/202/package_learn_view.dart';
 import 'package:flutter_learntwo/202/theme/light_theme.dart';
 import 'package:flutter_learntwo/202/theme_learn_view.dart';
-import 'package:flutter_learntwo/202/widget_size_enum_learn_view.dart';
+//import 'package:flutter_learntwo/202/theme_learn_view.dart';
+//import 'package:flutter_learntwo/202/widget_size_enum_learn_view.dart';
 //import 'package:flutter_learntwo/202/Services/service_post_learn.dart';
 //import '202/Services/service_learn_view.dart';
 //import 'package:flutter_learntwo/202/mdoel_learn_view.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       //     systemOverlayStyle: SystemUiOverlayStyle.light,
       //     elevation: 0,
       //   ),
-      home: const WidgetSizeEnumLearnView(),
+      home: const ThemeLearnView(),
     );
   }
 }

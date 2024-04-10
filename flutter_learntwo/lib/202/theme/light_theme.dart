@@ -11,12 +11,12 @@ class LightTheme {
             shape: RoundedRectangleBorder(
                 borderRadius:
                     BorderRadius.vertical(bottom: Radius.circular(20)))),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 172, 233, 238),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 245, 245, 245),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Color.fromARGB(255, 255, 255, 255)),
+            backgroundColor: Color.fromARGB(255, 250, 139, 139)),
         checkboxTheme: const CheckboxThemeData(
             fillColor:
-                MaterialStatePropertyAll(Color.fromARGB(255, 196, 140, 140)),
+                MaterialStatePropertyAll(Color.fromARGB(255, 237, 18, 18)),
             side: BorderSide(color: Colors.black)),
         buttonTheme: ButtonThemeData(
             colorScheme:
@@ -24,11 +24,11 @@ class LightTheme {
         colorScheme: const ColorScheme.light(),
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyMedium:
-                TextStyle(fontSize: 70, color: _lightColor._textColor)));
+                TextStyle(fontSize: 30, color: _lightColor._textColor)));
   }
 }
 
 class _LightColor {
-  final Color _textColor = const Color.fromARGB(6, 0, 0, 0);
+  final Color _textColor = const Color.fromARGB(6, 13, 0, 0);
   final Color _buttonColor = const Color.fromARGB(6, 231, 0, 0);
 }
