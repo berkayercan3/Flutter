@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/202/package/launch_manager.dart';
+import 'package:flutter_learntwo/202/package/launch_mixin.dart';
 import 'package:flutter_learntwo/202/package/loading_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,11 +17,17 @@ class _PackageLearnViewState extends State<PackageLearnView>
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).buttonTheme.colorScheme?.onPrimary,
         onPressed: () {
           launchUrl(Uri.parse('https://pub.dev/'));
         },
       ),
-      body: const LoadingBar(),
+      body: Column(
+        children: [
+          Text("SELAM", style: Theme.of(context).textTheme.bodyMedium),
+          const LoadingBar(),
+        ],
+      ),
     );
   }
 }
