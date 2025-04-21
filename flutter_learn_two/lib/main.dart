@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/202/image_learn_202.dart';
+import 'package:flutter_learntwo/202/animated_learn_view.dart';
 import 'package:flutter_learntwo/202/theme/light_theme.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_main.dart';
+import 'package:flutter_learntwo/Demo/Demo_Note/demo_start.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       //     systemOverlayStyle: SystemUiOverlayStyle.light,
       //     elevation: 0,
       //   ),
-      home: const ImageLearn202(),
+      home: const StartPage(),
     );
   }
 }

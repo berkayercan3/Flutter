@@ -10,16 +10,23 @@ class CardLearn extends StatelessWidget {
       body: Column(
         children: [
           Card(
-            //color: Colors.black,
-            margin: ProjectMargins.cardMargin, // margin içten değilde dıştan padding yapar
-            child: SizedBox(height: 100, width: 200, child: Center(child: Text('Berkay'))),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            color: Colors.yellow,
+            margin: ProjectMargins
+                .cardMargin, // margin içten değilde dıştan padding yapar
+            child: SizedBox(
+                height: 100, width: 200, child: Center(child: Text('Berkay'))),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
           Card(
             color: Theme.of(context).colorScheme.error,
             child: const SizedBox(height: 100, width: 200),
           ),
-          _CustomCard(child:const  SizedBox(height: 100, width: 200, child: Center(child: Text('Berkay')),
+          _CustomCard(
+              child: const SizedBox(
+            height: 100,
+            width: 200,
+            child: Center(child: Text('Berkay')),
           )),
         ],
       ),
@@ -37,13 +44,15 @@ class _CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final roundedRectangleBorder = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)); // veriable yaptık
+    final roundedRectangleBorder = RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)); // veriable yaptık
     return Card(
       margin: ProjectMargins.cardMargin,
       // margin içten değilde dıştan padding yapar
       child: child,
       // kodu mainde verdiğimiz için bidaha yazmak zorunda değiliz
-       shape: roundedRectangleBorder, //kartımıza stadyum şeklinde bir şekil verir , extract veriable yaptık
+      shape:
+          roundedRectangleBorder, //kartımıza stadyum şeklinde bir şekil verir , extract veriable yaptık
     );
   }
 }

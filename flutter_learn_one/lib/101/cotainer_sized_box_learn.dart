@@ -9,11 +9,10 @@ class ContainerSizeBoxLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      //AppBar, bir uygulama çubuğunu temsil eder ve genellikle sayfanın en üstünde görünen başlık ve diğer bileşenleri içerir.
       body: Column(
         children: [
           SizedBox(
-            width: 500,
+            width: 400,
             height: 200,
             child: Text('miyav <3 ' * 50),
           ),
@@ -23,15 +22,18 @@ class ContainerSizeBoxLearn extends StatelessWidget {
             child: Text('bbb' * 5),
           ),
           Container(
-            constraints: const BoxConstraints(maxWidth: 200, minWidth: 195,minHeight: 65),
+            constraints: const BoxConstraints(maxWidth: 200,
+                minWidth: 195,
+                minHeight: 65
+            ),
             //constraints sınırlama kısıtlama anlamına gelir
             child: Text('aa' * 50),
-            padding: const EdgeInsets.all(8),
-            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(40),
+            margin: const EdgeInsets.all(20),
             decoration: ProjectUtility.boxDecoration,
           )
         ],
-      ), // belirli bir boyuta sahip bir boş kutucuğu temsil eder. Bu örnekte body alanı boş bir kutucuğa sahip olacak.
+      ),
     );
   }
 }
@@ -42,6 +44,10 @@ class ProjectUtility {
   //color: Colors.red,
   gradient: const LinearGradient(
   colors: [Colors.black, Colors.red]),
-  boxShadow: const[BoxShadow(color: Colors.blue, offset: Offset(0.1, 1), blurRadius: 12),],
+  boxShadow: const[BoxShadow(color: Colors.blue,
+      offset: Offset(0.1, 1),
+      blurRadius: 12
+  ),
+  ],
     border: Border.all(width: 10,color: Colors.white12,));
 }

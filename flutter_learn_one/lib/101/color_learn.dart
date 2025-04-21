@@ -9,8 +9,9 @@ class ColorLearn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body:Container(
-
-        color: ColorsItems.charisma, child: const Text('data'),
+        color: ColorsItems.charisma,
+        child: const Text('data',style:TextStyle(fontSize: 50)
+        ),
       ),
     );
   }
@@ -18,6 +19,5 @@ class ColorLearn extends StatelessWidget {
 
 class ColorsItems {
   static Color perrywinkle = const  Color(0xff9586df);
-
   static Color charisma = const  Color.fromRGBO(96, 42, 91,1);
 }

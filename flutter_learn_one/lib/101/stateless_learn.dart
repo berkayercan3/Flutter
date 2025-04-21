@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class StaltessLearn extends StatelessWidget {
-  //extends ile classimizin StatelessWidget ozelligini kullanabilmesini sagladik
-  final String text2 = "veli0";
-  final String text3 = "veli1";
-  final String text4 = "veli2";
-  final String text5 = "veli3";
+class StatelessLearn extends StatelessWidget {
+  final String text2 = "Name1";
+  final String text3 = "Name2";
+  final String text4 = "Name3";
+  final String text5 = "Name4";
+
+  const StatelessLearn({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +19,18 @@ class StaltessLearn extends StatelessWidget {
           TitleTextWidget(text: text4),
           _emptyBox(),
           TitleTextWidget(text: text5),
-         const _CustomContainer(),//Refactor yaptik
+          const _CustomContainer(), //Refactor yaptik
           _emptyBox()
         ],
       ),
     );
   }
 
-  SizedBox _emptyBox() =>  SizedBox(height: 30);
+  SizedBox _emptyBox() => const SizedBox(height: 30);
 }
 
 class _CustomContainer extends StatelessWidget {
-  const _CustomContainer({ //Baslara koyulan alttantire file private anlamina gelir ve bu classimizin sadece bu dosayaya ozgu olmasini sagladik
-    super.key,
-  });
+  const _CustomContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +41,17 @@ class _CustomContainer extends StatelessWidget {
   }
 }
 
-//required sayesinde kullanilacak text ozelliginin kullanilmasinin zorunlu oldugunu belirttik
 class TitleTextWidget extends StatelessWidget {
   const TitleTextWidget({Key? key, required this.text}) : super(key: key);
 
-  //Aslinda mainden oge cekmis olduk ve onu duzenleyip gonderdik
-  final String text; //disardan parametre alabilmesini sagladik
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: Theme.of(context).textTheme.headline4,
-    );
+    return Text(text,
+        style: Theme.of(context)
+            .textTheme
+            .headlineLarge
+            ?.copyWith(color: Colors.blue));
   }
 }

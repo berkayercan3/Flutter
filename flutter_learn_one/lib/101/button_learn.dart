@@ -11,18 +11,30 @@ class ButtonLearn extends StatelessWidget {
       body: Column(
         children: [
           TextButton(
-            child: Text('Button', style: Theme.of(context).textTheme.subtitle1),
+            child: Text('TextButton', style: Theme.of(context).textTheme.subtitle1),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.resolveWith((states) {
               if (states.contains(MaterialState.pressed)) {
-                return Colors.green;
+                return Colors.red;
               }
-              return Colors.red;
+              return Colors.green;
             })),
             onPressed: () {}, // düğmeye tıklanınca yapılacak işlemler
           ),
-          const ElevatedButton(onPressed: null, child: const Text('data')),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.abc_rounded)),
+          ElevatedButton(
+            onPressed: () {
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blue, // Butonun arka plan rengi
+              onPrimary: Colors.pink, // Tıklanınca yazı rengi
+              elevation: 5, // Gölge derinliği
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20), // Yuvarlak kenar şekli
+              ),
+            ),
+            child:const Text('Elevated'),
+          ),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.access_alarms)),
           FloatingActionButton(
             onPressed: () {
               //servise istek at
@@ -31,12 +43,20 @@ class ButtonLearn extends StatelessWidget {
             child: const Icon(Icons.add),
           ),
           OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  //shape: const CircleBorder() daire şeklini yaratır
-                  backgroundColor: Colors.red,
-                  padding: const EdgeInsets.all(10)),
-              onPressed: () {},
-              child: const SizedBox(width: 200, child: Text('abcdef'))),
+            onPressed: () {
+            },
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Colors.blue, width: 2.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            child:const Text(
+              'Outlined Button',
+              style: TextStyle(color: Colors.blue), // Yazı rengi
+            ),
+          ),
+
           InkWell(
             // daha özelleştirilebilir bir button yaratmamıza olanak tanır
             onTap: () {},

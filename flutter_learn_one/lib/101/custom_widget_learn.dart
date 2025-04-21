@@ -10,21 +10,21 @@ class CustomWidgetLearn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // hizalama yapmak icin kullandik
+        crossAxisAlignment:
+            CrossAxisAlignment.start, // hizalama yapmak icin kullandik
         //column ile butonun ekrana yatay sığdırdık
         children: [
           Center(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: SizedBox(
-                   width: MediaQuery.of(context).size.width, // ekran genisligi ne ise o boyuta sahip bir buton oluyor
-                  child: CustomButton(title: title,onPressed: () {})
-                ),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: SizedBox(
+                width: MediaQuery.of(context)
+                    .size
+                    .width, // ekran genisligi ne ise o boyuta sahip bir buton oluyor
+                child: CustomButton(title: title, onPressed: () {})),
           )),
           const SizedBox(height: 100),
-          Center(child:
-            CustomButton(title: title,onPressed: () {})
-          ),
+          Center(child: CustomButton(title: title, onPressed: () {})),
         ],
       ),
     );
@@ -42,7 +42,8 @@ class PaddingUtility {
 }
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.title, required this.onPressed}) : super(key: key);
+  const CustomButton({Key? key, required this.title, required this.onPressed})
+      : super(key: key);
   final String title;
   final void Function() onPressed; // butonun hangi işi yapacağını belirttik
   @override

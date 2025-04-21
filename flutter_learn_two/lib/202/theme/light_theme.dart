@@ -24,7 +24,7 @@ class LightTheme {
         colorScheme: const ColorScheme.light(),
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyMedium:
-                TextStyle(fontSize: 30, color: _lightColor._textColor)));
+                TextStyle(fontSize: 40, color: _lightColor._textColor)));
   }
 }
 

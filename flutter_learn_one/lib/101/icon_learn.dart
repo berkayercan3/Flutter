@@ -17,7 +17,7 @@ final IconColors iconColors = IconColors();
               onPressed: () {},
               icon: Icon(
                 Icons.message_outlined,
-                color: Theme.of(context).backgroundColor,//bu özellik sayesinde tema rengi değiştiğinde ikonlarımız da ona göre renk değiştirebilir hale geliyor
+                color: Theme.of(context).colorScheme.background,//bu özellik sayesinde tema rengi değiştiğinde ikonlarımız da ona göre renk değiştirebilir hale geliyor
                 size: 40, // bu yanlış kullanımdır basit bir yazım şekli olur
               )),
           IconButton(
