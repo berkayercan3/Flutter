@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TextLearnView extends StatelessWidget {
-  final String name =
-      'Veli';
+  final String name = 'Veli';
   final ProjectKeys keys = ProjectKeys();
   final String? userName;
 
@@ -14,10 +13,10 @@ class TextLearnView extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-            CupertinoButton(child: const Text('button'), onPressed: () {}),
-             Text(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CupertinoButton(child: const Text('button'), onPressed: () {}),
+          Text(
             'Berkay $name \n name lenght:${name.length}',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -25,27 +24,25 @@ class TextLearnView extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 35,
                 wordSpacing: 2,
-                decoration:TextDecoration.underline,
+                decoration: TextDecoration.underline,
                 fontStyle: FontStyle.italic,
                 letterSpacing: 2,
                 color: Colors.blue,
-                fontWeight: FontWeight.w600
-                ),
+                fontWeight: FontWeight.w600),
           ),
           Text(
             'Berkay $name ${name.length}',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.right,
-            style: ProjectStyles
-                .welcomeStyle,
+            style: ProjectStyles.welcomeStyle,
           ),
           Text(
             'Berkay $name ${name.length}',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.right,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           Text(userName ?? ''),
           Text(keys.welcome),

@@ -1,37 +1,34 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kafe/101/image_learn.dart';
-import 'package:flutter/services.dart';
 
 class Demo1 extends StatelessWidget {
   const Demo1({super.key});
 
-  final _data = 'Create your first note';
-  final _description = 'Add a note ';
-  final _createNote = 'Create a note';
-  final _importNotes = 'Import Notes';
-  final _tittle = 'Demo';
+  final String _createNote = 'Create a note';
+  final String _importNotes = 'Import Notes';
+  final String _title = 'Demo';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
-        title: Text(_tittle),
+        title: Text(_title),
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
-
       body: Padding(
         padding: PaddingItems.horizontalPadding,
         child: Column(
           children: [
-            pictureImage(path: ImageItems().pictureWithoutPath),
-            _TittleWidget(data: _data),
-            Padding(
+            const PictureImage(path: 'resim'),
+            const _TitleWidget(data: 'Create your first note'),
+            const Padding(
               padding: PaddingItems.verticalPadding,
-              child: _SubTittleWidget(
-                title: _description * 10,),
+              child: _SubTitleWidget(
+                title:
+                    'Add a note Add a note Add a note Add a note Add a note Add a note Add a note Add a note Add a note Add a note',
+              ),
             ),
             const Spacer(),
             _createButton(context),
@@ -42,6 +39,7 @@ class Demo1 extends StatelessWidget {
       ),
     );
   }
+
   ElevatedButton _createButton(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
@@ -50,7 +48,7 @@ class Demo1 extends StatelessWidget {
         child: Center(
           child: Text(
             _createNote,
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),
       ),
@@ -58,37 +56,45 @@ class Demo1 extends StatelessWidget {
   }
 }
 
-// center text widget
-class _SubTittleWidget extends StatelessWidget {
-  const _SubTittleWidget(
-      {super.key, this.textAlign = TextAlign.center, required this.title});
+class _SubTitleWidget extends StatelessWidget {
+  const _SubTitleWidget({required this.title});
 
-  final TextAlign? textAlign;
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, textAlign: textAlign,
-      style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.black, fontWeight: FontWeight.w400),
+    return Text(
+      title,
+      textAlign: TextAlign.center, // Sabitledik
+      style: Theme.of(context)
+          .textTheme
+          .titleMedium
+          ?.copyWith(color: Colors.black, fontWeight: FontWeight.w400),
     );
   }
 }
 
-class _TittleWidget extends StatelessWidget {
-  const _TittleWidget({super.key, required this.data,});
+class _TitleWidget extends StatelessWidget {
+  const _TitleWidget({required this.data});
 
   final String data;
 
   @override
   Widget build(BuildContext context) {
-    return Text(data,
-        style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.black, fontWeight: FontWeight.w700));
+    return Text(
+      data,
+      style: Theme.of(context)
+          .textTheme
+          .headlineSmall
+          ?.copyWith(color: Colors.black, fontWeight: FontWeight.w700),
+    );
   }
 }
 
 class PaddingItems {
-  static EdgeInsets horizontalPadding = const EdgeInsets.symmetric(horizontal: 20); //yanlardan padding verdik
-  static EdgeInsets verticalPadding = const EdgeInsets.symmetric(vertical: 20); //yukardan padding verdik
+  static const EdgeInsets horizontalPadding =
+      EdgeInsets.symmetric(horizontal: 20);
+  static const EdgeInsets verticalPadding = EdgeInsets.symmetric(vertical: 20);
 }
 
 class ButtonHeights {

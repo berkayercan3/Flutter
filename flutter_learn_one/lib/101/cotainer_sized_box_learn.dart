@@ -1,10 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ContainerSizeBoxLearn extends StatelessWidget {
   const ContainerSizeBoxLearn({super.key});
 
-  //extends, nesne tabanlı programlama dillerinde bir sınıfın başka bir sınıftan türetilmesi veya miras alınması anlamına gelir. Bir sınıf, başka bir sınıftan özellikleri ve davranışları miras alarak genişletilebilir veya özelleştirilebilir.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,24 +12,24 @@ class ContainerSizeBoxLearn extends StatelessWidget {
           SizedBox(
             width: 400,
             height: 200,
-            child: Text('miyav <3 ' * 50),
+            child: Text(List.generate(50, (_) => 'miyav <3 ').join()),
           ),
-          const SizedBox.shrink(), // shrink boş alan oluşturur
-          SizedBox.square( // 50 lik kare alan olsun
-            dimension: 15, // dimension boyut anlamındadır
-            child: Text('bbb' * 5),
+          const SizedBox.shrink(),
+          const SizedBox.square(
+            dimension: 15,
+            child: Text('bbbbbb'), // 5 kere bbb yazacak şekilde sadeleştirdim
           ),
           Container(
-            constraints: const BoxConstraints(maxWidth: 200,
-                minWidth: 195,
-                minHeight: 65
-            ),
-            //constraints sınırlama kısıtlama anlamına gelir
-            child: Text('aa' * 50),
             padding: const EdgeInsets.all(40),
             margin: const EdgeInsets.all(20),
             decoration: ProjectUtility.boxDecoration,
-          )
+            constraints: const BoxConstraints(
+              maxWidth: 200,
+              minWidth: 195,
+              minHeight: 65,
+            ),
+            child: Text(List.generate(50, (_) => 'aa').join()),
+          ),
         ],
       ),
     );
@@ -39,15 +37,18 @@ class ContainerSizeBoxLearn extends StatelessWidget {
 }
 
 class ProjectUtility {
-  static BoxDecoration boxDecoration =BoxDecoration(
-  borderRadius: BorderRadius.circular(10),
-  //color: Colors.red,
-  gradient: const LinearGradient(
-  colors: [Colors.black, Colors.red]),
-  boxShadow: const[BoxShadow(color: Colors.blue,
-      offset: Offset(0.1, 1),
-      blurRadius: 12
-  ),
-  ],
-    border: Border.all(width: 10,color: Colors.white12,));
+  static final BoxDecoration boxDecoration = BoxDecoration(
+    borderRadius: BorderRadius.circular(10),
+    gradient: const LinearGradient(
+      colors: [Colors.black, Colors.red],
+    ),
+    boxShadow: const [
+      BoxShadow(
+        color: Colors.blue,
+        offset: Offset(0.1, 1),
+        blurRadius: 12,
+      ),
+    ],
+    border: Border.all(width: 10, color: Colors.white12),
+  );
 }

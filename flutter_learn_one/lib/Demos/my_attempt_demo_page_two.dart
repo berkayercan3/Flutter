@@ -12,14 +12,19 @@ class MyAttemptPage2 extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
           ),
-          child:const Row(
+          child: const Row(
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 15),
-                child: Icon(Icons.search,color: Colors.black54,size: 30,),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.black54,
+                  size: 30,
+                ),
               ),
               SizedBox(width: 8),
-              Expanded(child: TextField(
+              Expanded(
+                  child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search...',
                   border: InputBorder.none,
@@ -27,7 +32,7 @@ class MyAttemptPage2 extends StatelessWidget {
               ))
             ],
           ),
-          ),
+        ),
       ),
     );
   }

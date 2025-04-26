@@ -4,7 +4,7 @@ import 'package:kafe/core/random_image.dart';
 class StackDemoTwo extends StatelessWidget {
   const StackDemoTwo({super.key});
 
-  final _cardHeight = 50.0;
+  final double _cardHeight = 50.0;
   final double _cardWidth = 200;
 
   @override
@@ -19,20 +19,22 @@ class StackDemoTwo extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Positioned.fill(
-                  child: RandomImage(),
                   bottom: _cardHeight / 2,
+                  child:
+                      const RandomImage(), // const ekledik ve child sona geldi
                 ),
                 Positioned(
-                    height: _cardHeight,
-                    bottom: 0,
-                    width: _cardWidth,
-                    child: _cardCustom())
+                  height: _cardHeight,
+                  bottom: 0,
+                  width: _cardWidth,
+                  child: _cardCustom(),
+                ),
               ],
             ),
           ),
           const Spacer(
             flex: 6,
-          )
+          ),
         ],
       ),
     );

@@ -2,9 +2,6 @@
 //push,popup,pop
 
 import 'package:flutter/material.dart';
-import 'package:kafe/101/image_learn.dart';
-import 'package:kafe/101/padding_learn.dart';
-import 'package:kafe/Demos/my_collections_demos.dart';
 
 import 'navigate_detail_learn.dart';
 
@@ -29,11 +26,10 @@ class _NavigationLearnState extends State<NavigationLearn>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-
       body: ListView.builder(
         itemBuilder: (context, index) {
           return TextButton(
-            onPressed: () async{
+            onPressed: () async {
               final response = await navigateToWidgetNormal<bool>(
                   context, const NavigateLearn());
 
@@ -44,8 +40,9 @@ class _NavigationLearnState extends State<NavigationLearn>
             child: Padding(
               padding: const EdgeInsets.all(15),
               child: Placeholder(
-                  color:  selectedItems.contains(index) ? Colors.green : Colors.red
-              ),
+                  color: selectedItems.contains(index)
+                      ? Colors.green
+                      : Colors.red),
             ),
           );
         },
@@ -64,6 +61,7 @@ mixin NavigatorManager {
       settings: const RouteSettings(),
     ));
   }
+
   Future<T?> navigateToWidgetNormal<T>(BuildContext context, Widget widget) {
     return Navigator.of(context).push<T>(MaterialPageRoute(
       builder: (context) {
@@ -71,7 +69,6 @@ mixin NavigatorManager {
       },
       fullscreenDialog: true,
       settings: const RouteSettings(),
-
     ));
   }
 }

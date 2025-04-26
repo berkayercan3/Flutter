@@ -11,7 +11,6 @@ class StatefulLearn extends StatefulWidget {
 
 class _StatefulLearnState extends State<StatefulLearn> {
   int _countValue = 0;
-  int _counterCustom = 0;
 
   void _updateCounter(bool isIncrement) {
     if (isIncrement) {
@@ -36,9 +35,8 @@ class _StatefulLearnState extends State<StatefulLearn> {
       body: Column(
         children: [
           Center(
-              child: Text(
-            _countValue.toString(),
-            style: Theme.of(context).textTheme.headline2)),
+              child: Text(_countValue.toString(),
+                  style: Theme.of(context).textTheme.displayMedium)),
           const Placeholder(),
           const CounterHelloButton()
         ],
@@ -47,7 +45,7 @@ class _StatefulLearnState extends State<StatefulLearn> {
   }
 
   FloatingActionButton _incrementButton() {
-    print('selam');
+    debugPrint('selam');
     return FloatingActionButton(
       onPressed: () {
         _updateCounter(true);

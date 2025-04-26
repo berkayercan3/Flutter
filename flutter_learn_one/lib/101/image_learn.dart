@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 
 class ImageLearn extends StatelessWidget {
   const ImageLearn({super.key});
-final String _imagePath = 'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c683df40833b87469.jpg';
+
+  final String _imagePath =
+      'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c683df40833b87469.jpg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        children:  [
+        children: [
           SizedBox(
             height: 400,
             width: 300,
-            child: pictureImage(path:ImageItems().pictureWithoutPath),
+            child: PictureImage(path: ImageItems().pictureWithoutPath),
           ),
-          Image.network(_imagePath)
-          //resim linkini kullanarak resim kullanma şekli
+          Image.network(_imagePath),
+          // Resim linkini kullanarak resim gösterme
         ],
       ),
     );
@@ -23,16 +26,20 @@ final String _imagePath = 'https://i.pinimg.com/1200x/b3/5f/c7/b35fc7144c81956c6
 }
 
 class ImageItems {
-final String pictureWithoutPath = "resim";
+  final String pictureWithoutPath = "resim";
 }
 
+class PictureImage extends StatelessWidget {
+  const PictureImage({super.key, required this.path});
 
-class pictureImage extends StatelessWidget {
-  const pictureImage({super.key, required this.path});
-final String path;
+  final String path;
+
   @override
   Widget build(BuildContext context) {
-    return Image.asset(_nameWithPath(), fit: BoxFit.cover);
+    return Image.asset(
+      _nameWithPath(),
+      fit: BoxFit.cover,
+    );
   }
 
   String _nameWithPath() => 'assets/resim/$path.jpeg';

@@ -12,27 +12,27 @@ class _ListviewBuilderLearnState extends State<ListviewBuilderLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-
-      //body: ListView.builder(itemBuilder: (context, index) {
-        //ListView.builder bir veri kaynğından gelen verileri kullanarak ListView içindeki ögeleri oluşturur
-        //burada her bir ögeyi sırası ile oluşturmak için bir builder kullanıldı
-        //print(index); // oluşturulan ögenin sırasını takip ettik debugda
-      body: ListView.separated(separatorBuilder:(context , index) {
-        print(index);
+      body: ListView.separated(
+        separatorBuilder: (context, index) {
+          debugPrint(index.toString()); // düzeltildi
           return const Divider(
             color: Colors.white,
           );
-        }, itemBuilder: (context , index) {
+        },
+        itemBuilder: (context, index) {
           return SizedBox(
             height: 200,
             child: Column(
               children: [
-                Expanded(child: Image.network('https://picsum.photos/200/300'),),
-                Text('$index')
+                Expanded(
+                  child: Image.network('https://picsum.photos/200/300'),
+                ),
+                Text('$index'),
               ],
             ),
           );
-        }, itemCount: 20, // 15 e kadar ilerlemesini sağladık
+        },
+        itemCount: 20, // 20 adet liste öğesi
       ),
     );
   }

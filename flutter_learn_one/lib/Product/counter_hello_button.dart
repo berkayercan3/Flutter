@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:kafe/Product/language/language_items.dart';
 
@@ -12,8 +10,8 @@ class CounterHelloButton extends StatefulWidget {
 
 class _CounterHelloButtonState extends State<CounterHelloButton> {
   int _counterCustom = 0;
-final String _welcomeTitle = LanguageItems.welcomeTitle;
-  void _updateCounter(){
+  final String _welcomeTitle = LanguageItems.welcomeTitle;
+  void _updateCounter() {
     setState(() {
       ++_counterCustom;
     });
@@ -21,7 +19,6 @@ final String _welcomeTitle = LanguageItems.welcomeTitle;
 
   @override
   Widget build(BuildContext context) {
-
     return ElevatedButton(
         onPressed: _updateCounter,
         child: Text('$_welcomeTitle $_counterCustom'));

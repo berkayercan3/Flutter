@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kafe/101/card_learn.dart';
-import 'package:kafe/101/custom_widget_learn.dart';
-import 'package:kafe/101/image_learn.dart';
-import 'package:kafe/101/indicator_learn.dart';
-import 'package:kafe/101/padding_learn.dart';
-import 'package:kafe/101/text_learn_view.dart';
-import '101/app_bar_learn.dart';
-import '101/button_learn.dart';
-import '101/color_learn.dart';
-import '101/cotainer_sized_box_learn.dart';
-import '101/icon_learn.dart';
-import '101/scaffoold_learn.dart';
-import '101/stateless_learn.dart';
-import '101/text_field_learn.dart';
-import 'Demos/My_attempt_demo.dart';
+import '101/custom_widget_learn.dart';
 
 void main() {
   runApp(const MyApp());
