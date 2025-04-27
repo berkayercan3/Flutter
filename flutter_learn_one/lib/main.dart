@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '101/custom_widget_learn.dart';
+import 'package:kafe/101/stack_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 10, //gölge görünürlüğü
           )),
-      home: const CustomWidgetLearn(),
+      home: const StackLearn(),
     );
   }
 }

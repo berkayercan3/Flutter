@@ -10,25 +10,27 @@ class ColumnRow extends StatelessWidget {
       body: Column(
         children: [
           //4+2+2+2
-          Expanded( // expanded widgeti sayesinde çocuk widgetlerinin eşi olarak genişletilmesni sağladık
-            flex: 4, // flex çocukların ne kadar genişleyeceğini belirler, burada kısımı 4 ksımla paylaşacağı anlamına geldi
-            child: Row( // row yatay bir sıralama ile ( çocukları soldan sağa ) sıralar.
-              children: [
-                Expanded(child: Container(color: Colors.red)),
-                Expanded(child: Container(color: Colors.green)),
-                Expanded(child: Container(color: Colors.yellow)),
-                Expanded(child: Container(color: Colors.blue)),
-              ],
-            )
-          ),
-          const Spacer(flex: 2), // bir boşluk oluşturmuş olduk
+          Expanded(
+              // expanded widgeti sayesinde çocuk widgetlerinin eşit
+              // olarak genişletilmesni sağladık
+              flex: 4, // flex çocukların ne kadar genişleyeceğini belirler,
+              // burada kısımı 4 ksımla paylaşacağı anlamına geldi
+              child: Row(
+                children: [
+                  Expanded(child: Container(color: Colors.red)),
+                  Expanded(child: Container(color: Colors.green)),
+                  Expanded(child: Container(color: Colors.yellow)),
+                  Expanded(child: Container(color: Colors.blue)),
+                ],
+              )),
+          const Spacer(flex: 2),
           const Expanded(
             flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // yatayda eşit aralıklarla
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisSize: MainAxisSize.max,
-              children:[
+              children: [
                 Text('a'),
                 Text('a2'),
                 Text('a3'),
@@ -37,15 +39,15 @@ class ColumnRow extends StatelessWidget {
           ),
           const SizedBox(
             height: ProjectContainerSizes.cardHeight,
-            child:  Column(
+            child: Column(
               children: [
                 Expanded(child: Text('data')),
                 Expanded(child: Text('data')),
                 Expanded(child: Text('data')),
                 Expanded(child: Text('data')),
               ],
-            )
-          )
+            ),
+          ),
         ],
       ),
     );
