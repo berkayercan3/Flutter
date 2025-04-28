@@ -5,71 +5,68 @@ class StatefullLifeCycleLearn extends StatefulWidget {
 
   final String message;
 
-  @override //iç durumu (state) yönetilmesini sağlayan sınıftır
+  @override
   State<StatefullLifeCycleLearn> createState() =>
       _StatefullLifeCycleLearnState();
 }
 
 class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
-  String _message = '';
-  late final bool
-      _isOdd; //late ile bir değişkenin daha sonra başlatılacağını ve kullanmadan önce başlatılması
-  //gerektiğini ifade eder.Yani değişkenin ilk değeri tanımlandığınad verilmez,ancak daha
-  //sonra bir değer atanır.
-  //bool ya true olacak ya false issOdd da tek mi çift mi olunacağını tutar
-  //_isOdd un başlangıç değerini atayamzsın bu nedenle late kullanıldı
+  late String _displayMessage;
+  late final bool _isMessageLengthOdd;
+
+  @override
+  void initState() {
+    super.initState();
+    debugPrint('initState called: Widget is being created.');
+
+    _isMessageLengthOdd = widget.message.length.isOdd;
+    _displayMessage =
+        '${widget.message} ${_isMessageLengthOdd ? "Odd" : "Even"}';
+  }
 
   @override
   void didChangeDependencies() {
-    //statefulwidgetinin bağımlılığı değiştiğğinde çalışacak olan metottur
     super.didChangeDependencies();
-    _computeName(); // bu bağımlılık değişikliğinde çalışacak olan metottur
-    debugPrint('c'); // bu didchange metodu çalıştığında ekrana c yazdırır
+    debugPrint('didChangeDependencies called: Dependencies changed.');
   }
 
   @override
   void didUpdateWidget(covariant StatefullLifeCycleLearn oldWidget) {
-    //aynı şekilde bağımlılıkta bir değişiklik olduğunda çalışır
     super.didUpdateWidget(oldWidget);
-    debugPrint('b');
-  }
-  // mesaj tekse yanına tek değilse çift yaz
-
-  @override
-  void initState() {
-    // sayfa oluşturulduğunda çalışır , başlangıç durumu ayarlanır
-    super.initState();
-    _message = widget.message;
-    _isOdd = widget.message.length.isOdd;
-    _computeName();
-    debugPrint('a');
-  }
-
-  void _computeName() {
-    if (_isOdd) {
-      _message += "Cift";
-    } else {
-      _message += "Tek";
-    }
+    debugPrint('didUpdateWidget called: Widget updated.');
   }
 
   @override
   void dispose() {
-    //widget sona erdiğinde çalışır ve temizlik işlemleri yapmak için kullanılır
+    debugPrint('dispose called: Widget is being disposed.');
     super.dispose();
-    debugPrint('alo');
   }
 
   @override
   Widget build(BuildContext context) {
-    //kullanıcı arayüzü oluşturulur
+    debugPrint('build called: Widget is being rebuilt.');
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(_message),
+        title: const Text('Stateful Lifecycle'),
       ),
-      body: _isOdd
-          ? TextButton(onPressed: () {}, child: Text(_message))
-          : ElevatedButton(onPressed: () {}, child: Text(_message)),
+      body: Center(
+        child: _isMessageLengthOdd
+            ? TextButton(
+                onPressed: () {},
+                child: Text(
+                  _displayMessage,
+                  style: const TextStyle(fontSize: 24),
+                ),
+              )
+            : ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  _displayMessage,
+                  style: const TextStyle(fontSize: 24),
+                ),
+              ),
+      ),
     );
   }
 }

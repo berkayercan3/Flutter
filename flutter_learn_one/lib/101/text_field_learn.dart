@@ -10,69 +10,65 @@ class TextFieldLearn extends StatefulWidget {
 }
 
 class _TextFieldLearnState extends State<TextFieldLearn> {
-
-  FocusNode focusNodeTextFieldOne=FocusNode();
-  FocusNode focusNodeTextFieldTwo=FocusNode();
+  final FocusNode focusNodeTextFieldOne = FocusNode();
+  final FocusNode focusNodeTextFieldTwo = FocusNode();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          TextField(
-            // ekrana yazı yazabileceğin bir textfield alanı geldi
-
-            maxLength: 20,
-            // yazılabilecek maksimum değeri ifade eder ve ekranda bunu gösterir
-
-            buildCounter: (BuildContext context,
-                {int? currentLength, bool? isFocused, int? maxLength}) {
-              return Container(
-                color: Colors.green[100 * ((currentLength ?? 0) ~/ 2)],
-                height: 10,
-                width: 50,
-              );
-              //currentLenghti yani kullanıcının gireceği karakter sayısını tutar int türünde
-              //isFocussed de kullanıcının metin alanına tıklayıp tıklamadığını gösterir bool olması da true false
-              //maxLenghte gene aynı şekilde tutulabilecek maksimum karakter sayisini ifade eder
-            },
-            keyboardType: TextInputType.emailAddress,
-            //keyboartta mail yazılacağını anlayıp @ işareti çıkarılmasını sağlar
-            autofillHints: const [AutofillHints.email],
-            // otomotik tamamlama sağlar
-            focusNode: focusNodeTextFieldOne,
-            inputFormatters: [
-              TextProjectInputFormatter()._formatter],
-            textInputAction: TextInputAction.next, // 1. texti doldurduktan sonra diğer texte geçmeyi sağladık ok a bastığımızda klavye üzerinden
-            decoration: _InputDecarotor().emailInput,
-          ),
-          TextField(focusNode:focusNodeTextFieldTwo ,)
-        ],
+      appBar: AppBar(title: const Text('Login')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(
+              focusNode: focusNodeTextFieldOne,
+              keyboardType: TextInputType.emailAddress,
+              autofillHints: const [AutofillHints.email],
+              inputFormatters: [TextProjectInputFormatter().formatter],
+              textInputAction: TextInputAction.next,
+              maxLength: 20,
+              decoration: InputDecorators().emailInput,
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              focusNode: focusNodeTextFieldTwo,
+              obscureText: true,
+              decoration: InputDecorators().passwordInput,
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
 class TextProjectInputFormatter {
-  final _formatter = TextInputFormatter.withFunction((oldValue, newValue) {
+  final formatter = TextInputFormatter.withFunction((oldValue, newValue) {
     if (newValue.text == "a") {
-      //a'ya basılmamasını sağladı bu bir örnek buraya kendi methodunu ekleyebilirsin
       return oldValue;
     }
-    return oldValue;
+    return newValue;
   });
 }
 
-class _InputDecarotor {
-  final emailInput  = const InputDecoration(
-    prefixIcon: Icon(Icons.mail),
-    // field başına mail ıconu
-    border: OutlineInputBorder(),
-    //field etrafına bir outline çizgi eklendi
-    labelText:LanguageItems.mailTitle,
-    //küçük bir mail yazısı eklendi
-    fillColor: Colors.black38,
+class InputDecorators {
+  final emailInput = InputDecoration(
+    prefixIcon: const Icon(Icons.mail),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    labelText: LanguageItems.mailTitle,
+    hintText: 'Enter your email',
     filled: true,
+    fillColor: Colors.grey.shade200,
+    counterText: '',
+  );
+
+  final passwordInput = InputDecoration(
+    prefixIcon: const Icon(Icons.lock),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    labelText: 'Password',
+    hintText: 'Enter your password',
+    filled: true,
+    fillColor: Colors.grey.shade200,
   );
 }

@@ -7,34 +7,36 @@ class StackLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Stack( // en sona yazılan en önde olur mantığımız budur
+      body: Stack(
         children: [
-          Positioned.fill( // belirli bir bölgeyi kaplamak için kullanılır
-            top: 100,
-            child: Container(
-              color: Colors.blue,
-            ),
+          Container(
+            color: Colors.blue,
+            width: double.infinity,
+            height: double.infinity,
           ),
           Container(
             color: Colors.red,
-            height: 110,
+            width: 300,
+            height: 300,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          Positioned(
+            top: 50,
+            left: 50,
             child: Container(
-              color: Colors.blue,
+              color: Colors.yellow,
+              width: 200,
+              height: 200,
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: Container(
+              color: Colors.green,
+              width: 100,
               height: 100,
             ),
           ),
-
-          Positioned( // belirli bir pozisyon ve boyut verir
-            bottom: 5, // üsten aşağıya doğru verilecek boyutu px cinsinden verir
-            height: 100,
-            width: 25,
-            child: Container(
-              color: Colors.green,
-            ),
-          )
         ],
       ),
     );
