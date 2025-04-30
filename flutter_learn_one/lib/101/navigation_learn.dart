@@ -1,8 +1,4 @@
-//sayfalar(widgetler) arası data transferi yaptığımız yer
-//push,popup,pop
-
 import 'package:flutter/material.dart';
-
 import 'navigate_detail_learn.dart';
 
 class NavigationLearn extends StatefulWidget {
@@ -12,63 +8,45 @@ class NavigationLearn extends StatefulWidget {
   State<NavigationLearn> createState() => _NavigationLearnState();
 }
 
-class _NavigationLearnState extends State<NavigationLearn>
-    with NavigatorManager {
+class _NavigationLearnState extends State<NavigationLearn> {
   List<int> selectedItems = [];
-
-  void addSelected(int index) {
-    setState(() {
-      selectedItems.add(index);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text("Navigation")),
       body: ListView.builder(
+        itemCount: 10,
         itemBuilder: (context, index) {
+          final isSelected = selectedItems.contains(index);
+
           return TextButton(
             onPressed: () async {
-              final response = await navigateToWidgetNormal<bool>(
-                  context, const NavigateLearn());
-
-              if (response == true) {
-                addSelected(index);
+              final result = await Navigator.of(context).push<bool>(
+                MaterialPageRoute(
+                  builder: (context) => const NavigateLearn(),
+                ),
+              );
+              if (result == true) {
+                setState(() {
+                  selectedItems.add(index);
+                });
               }
             },
-            child: Padding(
-              padding: const EdgeInsets.all(15),
-              child: Placeholder(
-                  color: selectedItems.contains(index)
-                      ? Colors.green
-                      : Colors.red),
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              color: isSelected ? Colors.green[100] : Colors.grey[200],
+              child: Row(
+                children: [
+                  const Icon(Icons.star),
+                  const SizedBox(width: 10),
+                  Text('Öğe $index'),
+                ],
+              ),
             ),
           );
         },
       ),
     );
-  }
-}
-
-mixin NavigatorManager {
-  void navigateToWidget(BuildContext context, Widget widget) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) {
-        return widget;
-      },
-      fullscreenDialog: true,
-      settings: const RouteSettings(),
-    ));
-  }
-
-  Future<T?> navigateToWidgetNormal<T>(BuildContext context, Widget widget) {
-    return Navigator.of(context).push<T>(MaterialPageRoute(
-      builder: (context) {
-        return widget;
-      },
-      fullscreenDialog: true,
-      settings: const RouteSettings(),
-    ));
   }
 }

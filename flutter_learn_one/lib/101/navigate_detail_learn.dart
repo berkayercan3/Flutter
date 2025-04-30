@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 
-class NavigateLearn extends StatefulWidget {
+class NavigateLearn extends StatelessWidget {
   const NavigateLearn({super.key});
 
   @override
-  State<NavigateLearn> createState() => _NavigateLearnState();
-}
-
-class _NavigateLearnState extends State<NavigateLearn> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text("Detay")),
       body: Center(
-        child: ElevatedButton.icon(onPressed: () {
-          Navigator.of(context).pop(true);
-         },
-            icon: const Icon(Icons.check), label: const Text('Onayla')),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop(true);
+          },
+          child: const Text("Seç ve Geri Dön"),
+        ),
       ),
     );
   }

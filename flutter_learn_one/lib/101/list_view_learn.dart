@@ -6,37 +6,68 @@ class ListViewLearnState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('ListView Example')),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             FittedBox(
               child: Text(
-                'Hello',
-                style: Theme.of(context).textTheme.displayMedium, // düzeltildi
+                'Discover Flutter!',
+                style: Theme.of(context).textTheme.displayMedium,
                 maxLines: 1,
               ),
             ),
+            const SizedBox(height: 16),
             Container(
-              color: Colors.red,
-              height: 200,
+              color: Colors.blue,
+              height: 150,
+              alignment: Alignment.center,
+              child: const Text('Learn Dart Basics',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
             ),
-            const Divider(),
-            Container(color: Colors.green, height: 200),
-            const Divider(),
+            const SizedBox(height: 16),
+            Container(
+              color: Colors.green,
+              height: 150,
+              alignment: Alignment.center,
+              child: const Text('Practice Widgets',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
+            ),
+            const SizedBox(height: 16),
             SizedBox(
-              height: 100,
+              height: 120,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(color: Colors.green, width: 500),
-                  Container(color: Colors.white, width: 200),
+                  Container(
+                    width: 200,
+                    margin: const EdgeInsets.only(right: 10),
+                    color: Colors.purple,
+                    alignment: Alignment.center,
+                    child: const Text('ListView',
+                        style: TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
+                  Container(
+                    width: 200,
+                    margin: const EdgeInsets.only(right: 10),
+                    color: Colors.orange,
+                    alignment: Alignment.center,
+                    child: const Text('GridView',
+                        style: TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
                 ],
               ),
             ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
-            const _ListDemoState(),
+            const SizedBox(height: 16),
+            IconButton(
+              onPressed: () {
+                debugPrint('Close button pressed');
+              },
+              icon: const Icon(Icons.close),
+            ),
+            const SizedBox(height: 16),
+            const _ListDemoWidget(),
           ],
         ),
       ),
@@ -44,26 +75,24 @@ class ListViewLearnState extends StatelessWidget {
   }
 }
 
-// Debug amaçlı kullanılan Statefull Widget
-class _ListDemoState extends StatefulWidget {
-  // ignore: unused_element
-  const _ListDemoState({super.key});
+class _ListDemoWidget extends StatefulWidget {
+  const _ListDemoWidget({super.key});
 
   @override
-  State<_ListDemoState> createState() => _ListDemoStateState();
+  State<_ListDemoWidget> createState() => _ListDemoWidgetState();
 }
 
-class _ListDemoStateState extends State<_ListDemoState> {
+class _ListDemoWidgetState extends State<_ListDemoWidget> {
   @override
   void initState() {
     super.initState();
-    debugPrint('hello');
+    debugPrint('ListDemoWidget initialized');
   }
 
   @override
   void dispose() {
+    debugPrint('ListDemoWidget disposed');
     super.dispose();
-    debugPrint('exit');
   }
 
   @override
