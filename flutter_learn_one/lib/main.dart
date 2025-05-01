@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kafe/101/navigation_learn.dart';
+import 'package:kafe/Demos/Demos_learn_101/proje_one.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,30 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light().copyWith(
-          progressIndicatorTheme:
-              const ProgressIndicatorThemeData(color: Colors.white),
-          cardTheme: CardTheme(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20))),
-          inputDecorationTheme: const InputDecorationTheme(
-            //genel
-            filled: false, // metin alanının arka planı dolduruldu
-            fillColor: Colors.black38,
-            iconColor: Colors.red, //genel iconların rengi kırmızı oldu
-            border: OutlineInputBorder(), // her metin alanının etrafı sarıldı
-            floatingLabelStyle: TextStyle(
-                color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white, // Arkaplan beyaz
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent, // Şeffaf AppBar
+          elevation: 0, // Gölge yok
+          iconTheme:
+              IconThemeData(color: Colors.black), // AppBar iconları siyah
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
-          appBarTheme: const AppBarTheme(
-            centerTitle: true,
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-            backgroundColor: Colors.transparent,
-            elevation: 10, //gölge görünürlüğü
-          )),
-      home: const NavigationLearn(),
+        ),
+        primarySwatch: Colors.blue,
+      ),
+      home: const ProjeOne(),
     );
   }
 }
