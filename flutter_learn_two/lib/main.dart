@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/202/animated_learn_view.dart';
+import 'package:flutter_learntwo/202/tab_learn.dart';
 import 'package:flutter_learntwo/202/theme/light_theme.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_main.dart';
 import 'package:flutter_learntwo/Demo/Demo_Note/demo_start.dart';
 
 void main() {
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
       //     systemOverlayStyle: SystemUiOverlayStyle.light,
       //     elevation: 0,
       //   ),
-      home: const StartPage(),
+      home: const TabLearn(),
     );
   }
 }

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_login.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_signup.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_start.dart';
 
 class TabLearn extends StatefulWidget {
   const TabLearn({super.key});
@@ -12,61 +9,70 @@ class TabLearn extends StatefulWidget {
 
 class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
   late final TabController _tabController;
-  final double notchedValue = 10;
+
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(length: _MyTabViews.values.length, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: _MyTabViews.values.length,
-      child: Scaffold(
-          extendBody: true,
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
-              child: const Text('tab1'),
-              onPressed: () {
-                _tabController.animateTo(_MyTabViews.home.index);
-              }),
-          bottomNavigationBar: BottomAppBar(
-              notchMargin: notchedValue,
-              shape: const CircularNotchedRectangle(),
-              child: _myTabBar()),
-          body: _tabBarView()),
-    );
-  }
-
-  TabBar _myTabBar() {
-    return TabBar(
-        //Tabbarin default olarak temasini mainde kullandik ki her yerde ayni olsun
-        //maini kontrol et
-        padding: EdgeInsets.zero,
-        //isScrollable: true, // sikistirma yapmayi saglar
-        onTap: (int index) {},
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('TabBar ve BottomAppBar'),
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+      ),
+      body: TabBarView(
         controller: _tabController,
-        tabs: _MyTabViews.values.map((e) => Tab(text: e.name)).toList());
-  }
-
-  TabBarView _tabBarView() {
-    return TabBarView(
-      physics:
-          const NeverScrollableScrollPhysics(), //kullanicinin dokunup basili tutarak kaydirmasini engeller.
-      controller: _tabController,
-      children: const [
-        StartPage(),
-        LoginPage(),
-        DemoSignUp(),
-        StartPage(),
-      ],
+        children: const [
+          Center(
+            child: Text(
+              'Mesajlar Sayfası',
+              style: TextStyle(fontSize: 24, color: Colors.orange),
+            ),
+          ),
+          Center(
+            child: Text(
+              'Ana Sayfa',
+              style: TextStyle(fontSize: 24, color: Colors.green),
+            ),
+          ),
+          Center(
+            child: Text(
+              'Profil Sayfası',
+              style: TextStyle(fontSize: 24, color: Colors.purple),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: FloatingActionButton(
+          onPressed: () {
+            _tabController.animateTo(1);
+          },
+          backgroundColor: Colors.pinkAccent,
+          child: const Icon(Icons.home),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 1,
+        child: TabBar(
+          controller: _tabController,
+          indicatorColor: Colors.blue,
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.red,
+          tabs: const [
+            Tab(icon: Icon(Icons.message)),
+            Tab(icon: Icon(Icons.home)),
+            Tab(icon: Icon(Icons.person)),
+          ],
+        ),
+      ),
     );
   }
 }
-
-enum _MyTabViews { home, settings, favorite, profile }
-
-extension _MyTabViewsExtension on _MyTabViews {}
