@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learntwo/202/tab_learn.dart';
-import 'package:flutter_learntwo/202/theme/light_theme.dart';
-import 'package:flutter_learntwo/Demo/Demo_Note/demo_start.dart';
+import 'package:flutter_learntwo/202/model_learn/model_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,20 +12,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: LightTheme().theme,
-      //ThemeData.dark().copyWith(
-      //   tabBarTheme: TabBarTheme(
-      //     indicatorColor: Colors.white,
-      //     labelColor: Colors.orange[900],
-      //     unselectedLabelColor: Colors.black,
-      //     indicatorSize: TabBarIndicatorSize.tab,
-      //   ),
-      //   appBarTheme: const AppBarTheme(
-      //     backgroundColor: Colors.white24,
-      //     systemOverlayStyle: SystemUiOverlayStyle.light,
-      //     elevation: 0,
-      //   ),
-      home: const TabLearn(),
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.black),
+          bodyMedium: TextStyle(color: Colors.black),
+          bodySmall: TextStyle(color: Colors.black),
+          titleLarge: TextStyle(color: Colors.black),
+          titleMedium: TextStyle(color: Colors.black),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+      ),
+      home: const ModelLearnView(),
     );
   }
 }
